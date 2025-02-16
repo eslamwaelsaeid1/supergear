@@ -2,6 +2,7 @@ import { ProductProps } from "../../type";
 import { Store } from "../lib/store";
 import {loadStripe} from '@stripe/stripe-js';
 import { config } from "../config";
+
 const CheckoutBtn = ({ products }: { products: ProductProps[] }) => {
   const { currentUser } = Store();
   const publishableKey = "pk_test_51QsmwW2fllD8Q1FcH0BZFQ3rw8IzcWSQJWeHpgFrIADo26aXonNnRotwThrnhwErCO5MpFu4HZtznmm2522qC5UM006J0VNJQJ"
@@ -19,6 +20,7 @@ const CheckoutBtn = ({ products }: { products: ProductProps[] }) => {
         email: currentUser?.email,
       }),
     })
+    
     const checkoutSession = await response.json();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const result: any = await stripe?.redirectToCheckout({
@@ -31,6 +33,7 @@ const CheckoutBtn = ({ products }: { products: ProductProps[] }) => {
   }
 
   return (
+    
     <div className="mt-6">
       {currentUser ? (
         <button

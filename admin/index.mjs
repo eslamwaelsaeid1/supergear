@@ -9,8 +9,8 @@ import "dotenv/config";
 import cors from "cors";
 const port = process.env.PORT || 8000;
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 import { fileURLToPath } from "url";
 import path from "path";
@@ -21,6 +21,7 @@ const __dirname = path.dirname(__filename); // (بيجيب مسار المجلد
 
 const routesPath = path.resolve(__dirname, "./routes"); // بيجيب مسار فولد ال routes  //D:\do-it\admin\routes
 const routeFiles = readdirSync(routesPath); // بيقرأ كل الملفات الموجودة في فولدر routes وبيحطهم في مصفوفة (array). //[ 'blogs.mjs', 'categories.mjs', 'highlights.mjs', 'products.mjs' ]
+// console.log("🔹 Found route files:", routeFiles);
 
 routeFiles.map(async (file) => {
   const routeModule = await import(`./routes/${file}`); // عشان اعمل تصدير لكل ملفات الرووت

@@ -5,10 +5,13 @@ const router = Router();
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
 router.post("/checkout", async (req, res) => {
+  console.log("Checkout API hit", req.body);  
+
   const stripe = new Stripe(stripeSecretKey, {
     apiVersion: "2025-01-27.acacia",
   });
   try {
+    
     // const body = await req.body;
     const { items, email } = await req.body;
 
