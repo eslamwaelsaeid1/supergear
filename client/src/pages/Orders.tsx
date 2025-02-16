@@ -73,9 +73,9 @@ const Orders = () => {
                   0
                 );
                 return (
-                  <Disclosure key={order?.paymentId} className="pt-6">
+                  <Disclosure key={order?.paymentId} >
                     {({ open }: { open: boolean }) => (
-                      <>
+                      <div className="pt-6">
                         <dt>
                           <DisclosureButton className="flex w-full items-center justify-between text-left text-gray-900">
                             <span className="text-base font-semibold leading-7">
@@ -188,7 +188,7 @@ const Orders = () => {
                             ))}
                           </div>
                         </DisclosurePanel>
-                      </>
+                      </div>
                     )}
                   </Disclosure>
                 );
