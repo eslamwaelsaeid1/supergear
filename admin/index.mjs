@@ -12,10 +12,21 @@ const port = process.env.PORT || 8000;
 app.use(express.json());
 // app.use(cors());
 app.use(cors({
-  origin: "https://supergear-islam.vercel.app",
+  origin: (origin, callback) => {
+    if (!origin || /\.vercel\.app$/.test(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true
 }));
+// app.use(cors({
+//   origin: /\.vercel\.app$/, // السماح بأي نطاق من Vercel
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   credentials: true
+// }));
 
 import { fileURLToPath } from "url";
 import path from "path";
