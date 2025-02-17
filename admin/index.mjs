@@ -10,18 +10,18 @@ import cors from "cors";
 const port = process.env.PORT || 8000;
 
 app.use(express.json());
-// app.use(cors());
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || /\.vercel\.app$/.test(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true
-}));
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     if (!origin || /\.vercel\.app$/.test(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   credentials: true
+// }));
+app.use(cors());
 // app.use(cors({
 //   origin: /\.vercel\.app$/, // السماح بأي نطاق من Vercel
 //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
