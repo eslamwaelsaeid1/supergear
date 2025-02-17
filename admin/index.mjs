@@ -10,7 +10,12 @@ import cors from "cors";
 const port = process.env.PORT || 8000;
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "https://supergear-islam.vercel.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true
+}));
 
 import { fileURLToPath } from "url";
 import path from "path";
