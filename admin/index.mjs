@@ -10,18 +10,14 @@ import cors from "cors";
 const port = process.env.PORT || 8000;
 
 app.use(express.json());
+app.use(cors());
+
 // app.use(cors({
-//   origin: (origin, callback) => {
-//     if (!origin || /\.vercel\.app$/.test(origin)) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   },
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   origin: ['https://supergear-kuta.vercel.app', 'https://supergear-kuta-nbtdn3eze-eslams-projects-439de4f2.vercel.app'],
+//   methods: ['GET', 'POST'],
 //   credentials: true
 // }));
-app.use(cors());
+
 // app.use(cors({
 //   origin: /\.vercel\.app$/, // السماح بأي نطاق من Vercel
 //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",

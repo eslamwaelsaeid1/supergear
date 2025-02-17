@@ -20,7 +20,7 @@ const checkConfig = (server: string): Config | object => {
   return config;
 };
 
-export const selectServer = "production";
+export const selectServer = "local";
 export const config = checkConfig(selectServer) as Config; //type assertion يعني أنك تقول لـ تايب اسكربت أنا متأكد أن الكائن الذي أرجعه سيكون من نوع (كونفج)، حتى لو كان الكائن فارغًا في البداية.
 
 // const checkConfig = (server: string) => {
