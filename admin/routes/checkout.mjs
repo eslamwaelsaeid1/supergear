@@ -36,8 +36,8 @@ router.post("/checkout", async (req, res) => {
     //   success_url:"http://localhost:5173/success",
       // success_url:"http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}",
       // cancel_url: "http://localhost:5173/cancel",
-      success_url:"https://supergear-islam-o2sp33y1d-eslams-projects-439de4f2.vercel.app/success?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "https://supergear-islam-o2sp33y1d-eslams-projects-439de4f2.vercel.app/cancel",
+      success_url:"https://supergear-omega.vercel.app/success?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: "https://supergear-omega.vercel.app/cancel",
       metadata: {email,},
     });
 
